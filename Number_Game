@@ -1,0 +1,52 @@
+//
+//  ContentView.swift
+//  Shared
+//
+//  Created by a person on 4/30/22.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    
+    @State var score = 0
+    
+    var body: some View {
+        VStack {
+            Text("Number Game")
+                .font(.custom("Zapfino", size: 25))
+            
+            Text("Click On The Button To Increase Your Score.")
+            
+            Text("Your score is: \(score)")
+            
+            Spacer()
+            
+            Image("two")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Spacer()
+            
+            Button(action: {
+                workScore()
+            }) {
+                Text("Submit")
+                    .frame(width: 80 , height: 40 )
+                    .background(Color.purple)
+                    .cornerRadius(20)
+                    .foregroundColor(.white)
+            }
+        }
+    }
+    func workScore() {
+        score += 1
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
